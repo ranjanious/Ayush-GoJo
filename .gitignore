@@ -1,0 +1,50 @@
+# Virtual environment
+venv_rates/
+
+# Python compiled files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Raw data (large, source-downloadable)
+data/raw/
+
+# FRED API key backup files (never commit keys)
+.env
+*.env
+
+# Bloomberg data (proprietary, cannot be redistributed)
+*bloomberg*
+*_bb_*
+*_bbg_*
+
+# Jupyter notebook checkpoints
+.ipynb_checkpoints/
+*.ipynb
+
+# macOS system files
+.DS_Store
+.AppleDouble
+
+# Editor and IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# LaTeX build artifacts (generated, not source)
+paper/*.aux
+paper/*.log
+paper/*.synctex.gz
+paper/*.bbl
+paper/*.blg
+paper/*.fls
+paper/*.fdb_latexmk
+paper/*.out
+paper/*.toc
+
+# Large numpy binary outputs (regenerate from code)
+*.npy
+*.npz
