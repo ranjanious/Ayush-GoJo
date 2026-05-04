@@ -1,0 +1,138 @@
+{
+  "config": {
+    "a": 0.5,
+    "b": 0.04,
+    "sigma": 0.01,
+    "r0": 0.0372,
+    "dt": 0.08333333333333333,
+    "T": 10.0,
+    "n_paths": 10000,
+    "seed": 20260417,
+    "horizons": [
+      1.0,
+      2.0,
+      5.0,
+      10.0
+    ]
+  },
+  "moment_validation": {
+    "max_abs_mean_err": 0.00020747652671528755,
+    "max_abs_var_err": 2.7034645982285457e-06
+  },
+  "horizon_table": [
+    {
+      "horizon_yr": 1.0,
+      "sample_mean": 0.038300986366303844,
+      "theory_mean": 0.038301714152804624,
+      "sample_sd": 0.008051835118368631,
+      "theory_sd": 0.007950600976206501,
+      "q05": 0.025187799294304397,
+      "median": 0.038277848938705936,
+      "q95": 0.05155264284047537
+    },
+    {
+      "horizon_yr": 2.0,
+      "sample_mean": 0.038892666576313205,
+      "theory_mean": 0.03896993756471996,
+      "sample_sd": 0.009407151226625927,
+      "theory_sd": 0.009298734950321937,
+      "q05": 0.023504153299526084,
+      "median": 0.0389067866352405,
+      "q95": 0.0544097483728432
+    },
+    {
+      "horizon_yr": 5.0,
+      "sample_mean": 0.03982971258029885,
+      "theory_mean": 0.03977016200385308,
+      "sample_sd": 0.009960305209577329,
+      "theory_sd": 0.009966253323094464,
+      "q05": 0.023793495033237935,
+      "median": 0.03974602595884552,
+      "q95": 0.05625246538217486
+    },
+    {
+      "horizon_yr": 10.0,
+      "sample_mean": 0.04002014303904321,
+      "theory_mean": 0.039981133748402564,
+      "sample_sd": 0.01012278407495159,
+      "theory_sd": 0.009999772997774688,
+      "q05": 0.02333649716987964,
+      "median": 0.04001249849914444,
+      "q95": 0.05676717434843133
+    }
+  ],
+  "dbm_contrast": {
+    "vasicek_sd_at_T": 0.01012278407495159,
+    "dbm_sd_at_T": 0.031498686500820744,
+    "ratio_dbm_over_vasicek": 3.111662391254886,
+    "dbm_theory_sd": 0.0316227766016838,
+    "vasicek_stationary_sd": 0.01
+  },
+  "negative_rate_preview": {
+    "frac_any_negative": 0.0013,
+    "n_paths_any_negative": 13,
+    "frac_negative_at_T": 0.0001,
+    "global_min_rate": -0.0033101014203870275,
+    "total_negative_observations": 23,
+    "n_paths": 10000,
+    "n_total_observations": 1210000,
+    "per_horizon_fraction_negative": [
+      {
+        "horizon_yr": 1.0,
+        "frac_negative": 0.0
+      },
+      {
+        "horizon_yr": 2.0,
+        "frac_negative": 0.0
+      },
+      {
+        "horizon_yr": 5.0,
+        "frac_negative": 0.0001
+      },
+      {
+        "horizon_yr": 10.0,
+        "frac_negative": 0.0001
+      }
+    ]
+  },
+  "sanity_checks": {
+    "sample_mean_tracks_theory": {
+      "criterion": "max|err| < 1e-3",
+      "observed": 0.00020747652671528755,
+      "pass": true
+    },
+    "sample_variance_tracks_theory": {
+      "criterion": "max|err| < 1e-5",
+      "observed": 2.7034645982285457e-06,
+      "pass": true
+    },
+    "long_horizon_mean_approaches_b": {
+      "criterion": "|mean(T=10) - b| < 1e-3",
+      "observed": 2.0143039043206412e-05,
+      "pass": true
+    },
+    "long_horizon_sd_approaches_stationary": {
+      "criterion": "|sd(T=10) - sigma/sqrt(2a)| < 1e-3",
+      "observed": 0.00012278407495158912,
+      "pass": true
+    },
+    "dbm_dispersion_exceeds_vasicek": {
+      "criterion": "ratio > 1",
+      "observed": 3.111662391254886,
+      "pass": true
+    },
+    "negative_rates_documented": {
+      "criterion": "documented; reported in Step 18",
+      "observed": 0.0013,
+      "pass": true
+    }
+  },
+  "figures": {
+    "fig1_paths": "../../figures/step13/fig1_paths.png",
+    "fig2_mean": "../../figures/step13/fig2_mean.png",
+    "fig3_variance": "../../figures/step13/fig3_variance.png",
+    "fig4_terminal_density": "../../figures/step13/fig4_terminal_density.png",
+    "fig5_vas_vs_dbm": "../../figures/step13/fig5_vas_vs_dbm.png",
+    "fig6_negatives": "../../figures/step13/fig6_negatives.png"
+  }
+}
