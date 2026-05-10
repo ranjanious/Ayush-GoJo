@@ -68,6 +68,31 @@ def simulate_vasicek_paths(
     return paths
 
 
+def simulate_vasicek(
+    a: float = A_DEFAULT,
+    b: float = B_DEFAULT,
+    sigma: float = SIGMA_DEFAULT,
+    r0: float = R0_DEFAULT,
+    dt: float = DT_DEFAULT,
+    n_steps: int | None = None,
+    n_paths: int = N_PATHS_DEFAULT,
+    seed: int | None = SEED_DEFAULT,
+) -> np.ndarray:
+    """
+    Step 14 wrapper around `simulate_vasicek_paths` that takes `n_steps`
+    instead of `T`.  Provided so downstream Step 14+ code can import a
+    function with the explicit-grid signature used throughout Phase C.
+    """
+    if n_steps is None:
+        T_local = T_DEFAULT
+    else:
+        T_local = n_steps * dt
+    return simulate_vasicek_paths(
+        a=a, b=b, sigma=sigma, r0=r0, dt=dt, T=T_local,
+        n_paths=n_paths, seed=seed,
+    )
+
+
 def vasicek_theoretical_mean(
     t_grid: np.ndarray,
     a: float = A_DEFAULT,

@@ -145,6 +145,39 @@ def summary_stats(dist, label="", V0=100.0):
     }
 
 
+def full_metric_set(dist, threshold=100.0):
+    """
+    Step 14 reporting API.  Returns the field names used in the Step 14
+    completion-log tables exactly:
+
+        mean, std, skew, kurt, min, max,
+        VaR95, ES95, VaR95_SE, VaR99, ES99, VaR99_SE,
+        p_loss, n_paths
+
+    SE for the VaR estimates is the delta-method (Silverman-bandwidth KDE)
+    standard error from `var_se_delta`.
+    """
+    dist = np.asarray(dist, dtype=float)
+    n = int(dist.size)
+    out = {
+        "mean":     float(np.mean(dist)),
+        "std":      float(np.std(dist, ddof=1)) if n > 1 else 0.0,
+        "skew":     float(stats.skew(dist)) if n > 1 else 0.0,
+        "kurt":     float(stats.kurtosis(dist)) if n > 1 else 0.0,
+        "min":      float(np.min(dist)),
+        "max":      float(np.max(dist)),
+        "VaR95":    var_empirical(dist, 0.05),
+        "ES95":     expected_shortfall(dist, 0.05),
+        "VaR95_SE": var_se_delta(dist, 0.05),
+        "VaR99":    var_empirical(dist, 0.01),
+        "ES99":     expected_shortfall(dist, 0.01),
+        "VaR99_SE": var_se_delta(dist, 0.01),
+        "p_loss":   prob_loss(dist, threshold),
+        "n_paths":  n,
+    }
+    return out
+
+
 def risk_report(dist, threshold=100.0, alphas=(0.05, 0.01),
                 n_boot=1000, seed=42):
     """
