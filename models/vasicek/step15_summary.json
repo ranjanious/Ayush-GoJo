@@ -1,0 +1,56 @@
+{
+  "parameters": {
+    "a": 0.5,
+    "b": 0.04,
+    "sigma": 0.01,
+    "r0": 0.0372
+  },
+  "dt_base": 0.08333333333333333,
+  "n_paths_base": 10000,
+  "seed": 42,
+  "n_maturities": 8,
+  "max_abs_rel_error_pct": 0.03228598381852148,
+  "median_abs_rel_error_pct": 0.003488336678216011,
+  "all_pass_1pct": true,
+  "max_abs_z_stat": 2.073362163912913,
+  "median_abs_z_stat": 0.29527453378302415,
+  "sanity_checks": {
+    "sigma_zero_limit": {
+      "P_sigma0": 0.8229501296144428,
+      "exp_minus_integ": 0.8229501296144428,
+      "abs_diff": 0.0,
+      "pass": true
+    },
+    "B_monotone_increasing": {
+      "B_values": [
+        0.2350061948308093,
+        0.44239843385719024,
+        0.7869386805747332,
+        1.2642411176571153,
+        1.5537396797031404,
+        1.8358300027522023,
+        1.939605233155363,
+        1.986524106001829
+      ],
+      "limit_1_over_a": 2.0,
+      "pass": true
+    },
+    "mc_se_slope_vs_N": {
+      "fitted_slope": -0.5115540035764066,
+      "target": -0.5,
+      "abs_dev": 0.011554003576406568,
+      "pass": true
+    },
+    "bias_dominated_by_mc_noise": {
+      "ratios_err_over_SE": [
+        0.045392818029993905,
+        0.3213267712270416,
+        0.393107298409717,
+        0.8730052855679967,
+        0.5918859614593218
+      ],
+      "max_ratio": 0.8730052855679967,
+      "pass": true
+    }
+  }
+}
