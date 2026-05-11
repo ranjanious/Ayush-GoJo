@@ -122,3 +122,55 @@ def vasicek_stationary_moments(
 ) -> tuple[float, float]:
     """Stationary mean and variance: (b, sigma^2 / (2a))."""
     return b, (sigma ** 2) / (2.0 * a)
+
+
+# -----------------------------------------------------------------------------
+# Step 15 additions: discount factor helper + MC zero-coupon bond pricer
+# -----------------------------------------------------------------------------
+def riemann_discount_factor(rate_paths: np.ndarray, dt: float) -> np.ndarray:
+    """
+    Left-endpoint Riemann approximation of D_T = exp(- int_0^T r_s ds) along
+    each path.  Uses columns 0 .. n_steps - 1 so the integral excludes r_T,
+    matching the project's bond_pricing.py convention.
+
+    Args
+    ----
+    rate_paths : ndarray (n_paths, n_steps + 1)
+    dt         : float, grid spacing in years
+
+    Returns
+    -------
+    ndarray (n_paths,)
+    """
+    integ = rate_paths[:, :-1].sum(axis=1) * dt
+    return np.exp(-integ)
+
+
+def zcb_price_mc(
+    a: float,
+    b: float,
+    sigma: float,
+    r0: float,
+    T: float,
+    dt: float = DT_DEFAULT,
+    n_paths: int = N_PATHS_DEFAULT,
+    seed: int = 42,
+) -> tuple[float, float, np.ndarray]:
+    """
+    Monte Carlo zero-coupon bond price P_MC(0, T) under Vasicek.
+
+    Returns
+    -------
+    (price, standard_error, discount_factor_array)
+        price    -- sample mean of the path-specific discount factors
+        se       -- sample std / sqrt(n_paths)
+        D        -- ndarray (n_paths,) of path-specific discount factors
+    """
+    paths = simulate_vasicek_paths(
+        a=a, b=b, sigma=sigma, r0=r0, dt=dt, T=T,
+        n_paths=n_paths, seed=seed,
+    )
+    D = riemann_discount_factor(paths, dt)
+    price = float(D.mean())
+    se = float(D.std(ddof=1) / np.sqrt(n_paths))
+    return price, se, D
