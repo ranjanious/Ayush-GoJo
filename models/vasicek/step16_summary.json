@@ -1,0 +1,59 @@
+{
+  "parameters": {
+    "a": 0.5,
+    "b": 0.04,
+    "sigma": 0.01,
+    "r0": 0.0372,
+    "dt": 0.08333333333333333,
+    "n_paths": 10000,
+    "horizon": 10.0,
+    "seed": 42
+  },
+  "horizons": [
+    1.0,
+    2.0,
+    5.0,
+    10.0
+  ],
+  "max_abs_diff_bond_bank_bp": 2.1189326302469,
+  "max_abs_diff_bond_rbar_bp": 1.1444963853774608,
+  "max_abs_perstep_residual_bp_A": 0.42296407189762636,
+  "max_abs_perstep_residual_bp_B": 0.9196498196394238,
+  "max_abs_z_perstep_A": 1.7965007749671298,
+  "max_abs_z_perstep_B": 2.854831958434076,
+  "median_abs_z_perstep_A": 0.6969709023019982,
+  "median_abs_z_perstep_B": 0.7036275780156009,
+  "ratio_V_over_M_mean_A_at_T10": 1.000024007938714,
+  "ratio_V_over_M_mean_B_at_T10": 1.0001316033071455,
+  "acceptance_criterion_bp_per_horizon": 10.0,
+  "all_horizons_pass_10bp": true,
+  "sanity_checks": {
+    "sigma_zero_limit": {
+      "max_gap_bp_sigma0": 0.3106790671040388,
+      "tolerance_bp": 1.0,
+      "pass": true
+    },
+    "zcb_discounted_constant": {
+      "P0_10": 0.6740589341483448,
+      "max_path_dev": 2.5844089079907206e-06,
+      "tolerance": 0.0001,
+      "pass": true
+    },
+    "mc_se_coherence": {
+      "max_perhorizon_gap_bp": 2.1189326302469,
+      "pass": true
+    },
+    "z_stat_distribution": {
+      "median_abs_z_A": 0.6969709023019982,
+      "max_abs_z_A": 1.7965007749671298,
+      "median_abs_z_B": 0.7036275780156009,
+      "max_abs_z_B": 2.854831958434076,
+      "pass": true
+    },
+    "convexity_sign_bondA_post_maturity": {
+      "positive_fraction_post_maturity": 1.0,
+      "n_post_maturity_steps": 96,
+      "pass": true
+    }
+  }
+}
