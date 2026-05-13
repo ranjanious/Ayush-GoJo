@@ -47,13 +47,19 @@ def simulate_vasicek_paths(
     T: float = T_DEFAULT,
     n_paths: int = N_PATHS_DEFAULT,
     seed: int | None = SEED_DEFAULT,
+    horizon_years: float | None = None,
 ) -> np.ndarray:
     """
     Simulate Vasicek short-rate paths under Euler-Maruyama.
 
     Returns an ndarray of shape (n_paths, n_steps + 1) where column 0 is r0
     and column k is r at time t_k = k*dt.
+
+    `horizon_years` is an explicit-name alias for `T`, accepted for Step 16+
+    callers; if provided, it overrides the positional `T` argument.
     """
+    if horizon_years is not None:
+        T = horizon_years
     n_steps = int(round(T / dt))
     rng = np.random.default_rng(seed)
     # Pre-draw the full shock matrix for vectorized stepping.
@@ -144,6 +150,23 @@ def riemann_discount_factor(rate_paths: np.ndarray, dt: float) -> np.ndarray:
     """
     integ = rate_paths[:, :-1].sum(axis=1) * dt
     return np.exp(-integ)
+
+
+def riemann_left_integral(rate_paths: np.ndarray, dt: float) -> np.ndarray:
+    """
+    Cumulative left-endpoint integral of the short rate along each path.
+
+        I[p, k] = sum_{j < k} r[p, j] * dt   for k = 0, 1, ..., n_steps
+        I[p, 0] = 0
+
+    Shape (n_paths, n_steps + 1).  Reused by Step 16 for both the
+    money-market account M(t_k) = exp(I[k]) and the reinvested-coupon
+    growth factor exp(I[k] - I[T_j]).
+    """
+    n_paths, n_grid = rate_paths.shape
+    I = np.zeros((n_paths, n_grid), dtype=np.float64)
+    I[:, 1:] = np.cumsum(rate_paths[:, :-1] * dt, axis=1)
+    return I
 
 
 def zcb_price_mc(

@@ -78,6 +78,32 @@ def vasicek_zcb_yield(
     return float(-lnP / tau)
 
 
+def vasicek_zcb_price_vec(
+    tau: float,
+    r: np.ndarray,
+    a: float,
+    b: float,
+    sigma: float,
+) -> np.ndarray:
+    """
+    Vectorised Vasicek ZCB price for a scalar tau = T - t and an array of
+    short rates r (one per Monte Carlo path).
+
+    Returns
+    -------
+    ndarray with the same shape as `r`: P(t, t + tau) for each rate value.
+
+    Vasicek is time-homogeneous, so B(t, T) and lnA(t, T) depend only on
+    tau = T - t.  This helper is used by Step 16 to value each bond's
+    remaining cash-flow strip along every simulated path.
+    """
+    if tau <= 0.0:
+        return np.ones_like(np.asarray(r, dtype=float))
+    B = vasicek_B(0.0, tau, a)
+    lnA = vasicek_lnA(0.0, tau, a, b, sigma)
+    return np.exp(lnA - B * np.asarray(r, dtype=float))
+
+
 if __name__ == "__main__":
     # Sigma -> 0 sanity: the diffusion vanishes, r_t = b + (r0 - b) exp(-a t),
     # and P(0, T) = exp(- integral_0^T r_s ds).
