@@ -1,0 +1,63 @@
+{
+  "parameters": {
+    "a": 0.5,
+    "b": 0.04,
+    "sigma": 0.01,
+    "r0": 0.0372,
+    "dt": 0.08333333333333333,
+    "n_paths": 10000,
+    "horizon": 10.0,
+    "seed": 42
+  },
+  "horizons": [
+    1.0,
+    2.0,
+    5.0,
+    10.0
+  ],
+  "max_abs_mean_err_em_bp": 1.9012059380495856,
+  "max_abs_mean_err_exact_bp": 1.9111145969562955,
+  "max_abs_var_err_em_rel": 0.05549465837516987,
+  "max_abs_var_err_exact_rel": 0.029751233688574904,
+  "max_zcb_rel_diff_em_vs_exact_pct": 0.01044215711593899,
+  "max_zcb_rel_diff_em_vs_analytic_pct": 0.015954525189711855,
+  "max_zcb_rel_diff_exact_vs_analytic_pct": 0.023400197557496446,
+  "max_coupon_ann_return_diff_bp": 0.2453751325391662,
+  "max_var_rel_diff_pct": 2.090288084380049,
+  "theoretical_mu_error_bp_per_step": -0.024305555555555587,
+  "theoretical_var_error_rel_per_step": -0.040532975551879506,
+  "acceptance_criterion_zcb_bp_of_price": 5.0,
+  "acceptance_criterion_var_rate_pct": 3.0,
+  "acceptance_criterion_var_bondB_bp_of_V0": 10.0,
+  "zcb_passes_5bp_of_price": true,
+  "var_rate_passes_3pct": true,
+  "var_bondB_passes_10bp_of_V0": true,
+  "sanity_checks": {
+    "sigma_zero_collapse": {
+      "max_rel_err_exact": 3.5012624065854825e-16,
+      "max_rel_err_em": 0.0005608153863840409,
+      "tolerance_exact": 1e-12,
+      "pass": true
+    },
+    "stationary_law_match": {
+      "mean_em_dev_bp": 1.0669635005390588,
+      "mean_exact_dev_bp": 1.0395021931124822,
+      "var_em_rel": 0.027784107966417046,
+      "var_exact_rel": 0.006228503019365088,
+      "pass": true
+    },
+    "brownian_increment_audit": {
+      "first_year_identical": true,
+      "pass": true
+    },
+    "mean_curve_correlation": {
+      "pearson_r_em_vs_exact_mean_curve": 0.9999680811834366,
+      "pass": true
+    },
+    "zcb_within_5bp_of_price": {
+      "max_em_vs_exact_bp_of_price": 1.044215711593899,
+      "tolerance_bp": 5.0,
+      "pass": true
+    }
+  }
+}
