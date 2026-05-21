@@ -1,0 +1,243 @@
+{
+  "config": {
+    "a": 0.5,
+    "b": 0.04,
+    "sigma": 0.08,
+    "r0": 0.0372,
+    "dt": 0.08333333333333333,
+    "n_paths": 10000,
+    "horizon_years": 10.0,
+    "seed": 42
+  },
+  "horizons": [
+    1.0,
+    2.0,
+    5.0,
+    10.0
+  ],
+  "feller": {
+    "feller_lhs_2ab": 0.04,
+    "feller_rhs_sigma2": 0.0064,
+    "feller_ratio": 6.25,
+    "feller_holds": true,
+    "boundary_attainable": false
+  },
+  "em_moments": [
+    {
+      "T": 1.0,
+      "E_sim": 0.038114559238183486,
+      "E_ana": 0.038301714152804624,
+      "Var_sim": 0.00015714862570904696,
+      "Var_ana": 0.00015326960338759449,
+      "min_sim": 0.0050017507292629566,
+      "max_sim": 0.0937693951403717,
+      "neg_sim": 0.0
+    },
+    {
+      "T": 2.0,
+      "E_sim": 0.03900530549015073,
+      "E_ana": 0.03896993756471996,
+      "Var_sim": 0.00021734673451703418,
+      "Var_ana": 0.0002130197848710429,
+      "min_sim": 0.0043584691343243245,
+      "max_sim": 0.1198173920550675,
+      "neg_sim": 0.0
+    },
+    {
+      "T": 5.0,
+      "E_sim": 0.039600522234202226,
+      "E_ana": 0.03977016200385308,
+      "Var_sim": 0.00025892903545578585,
+      "Var_ana": 0.00025157464723800084,
+      "min_sim": 0.0034861091235754635,
+      "max_sim": 0.12579128855656224,
+      "neg_sim": 0.0
+    },
+    {
+      "T": 10.0,
+      "E_sim": 0.04019924487888953,
+      "E_ana": 0.039981133748402564,
+      "Var_sim": 0.00026332395180378925,
+      "Var_ana": 0.0002557485167310163,
+      "min_sim": 0.003861998025893107,
+      "max_sim": 0.12272206811665179,
+      "neg_sim": 0.0
+    }
+  ],
+  "exact_moments": [
+    {
+      "T": 1.0,
+      "E_sim": 0.03833121734723168,
+      "E_ana": 0.038301714152804624,
+      "Var_sim": 0.00015546987596323582,
+      "Var_ana": 0.00015326960338759449,
+      "min_sim": 0.005843590372903526,
+      "max_sim": 0.09699634461130206,
+      "neg_sim": 0.0
+    },
+    {
+      "T": 2.0,
+      "E_sim": 0.03908800464519071,
+      "E_ana": 0.03896993756471996,
+      "Var_sim": 0.0002213420358009875,
+      "Var_ana": 0.0002130197848710429,
+      "min_sim": 0.005629261533093912,
+      "max_sim": 0.12749878131119516,
+      "neg_sim": 0.0
+    },
+    {
+      "T": 5.0,
+      "E_sim": 0.03976964342903859,
+      "E_ana": 0.03977016200385308,
+      "Var_sim": 0.0002551768197198971,
+      "Var_ana": 0.00025157464723800084,
+      "min_sim": 0.0055147866543981666,
+      "max_sim": 0.12671704034209255,
+      "neg_sim": 0.0
+    },
+    {
+      "T": 10.0,
+      "E_sim": 0.04016338977486306,
+      "E_ana": 0.039981133748402564,
+      "Var_sim": 0.0002583779178715103,
+      "Var_ana": 0.0002557485167310163,
+      "min_sim": 0.0026156941652032816,
+      "max_sim": 0.15060631784678932,
+      "neg_sim": 0.0
+    }
+  ],
+  "coupling": [
+    {
+      "T_yr": 1.0,
+      "mean_gap_bp": -2.1665810904820253,
+      "abs_gap_mean_bp": 139.59890809327862,
+      "abs_gap_p95_bp": 349.0357187250884,
+      "abs_gap_max_bp": 691.6447667377918
+    },
+    {
+      "T_yr": 2.0,
+      "mean_gap_bp": -0.8269915503997857,
+      "abs_gap_mean_bp": 162.11820717328177,
+      "abs_gap_p95_bp": 413.9701651725813,
+      "abs_gap_max_bp": 899.3433902668302
+    },
+    {
+      "T_yr": 5.0,
+      "mean_gap_bp": -1.6912119483636023,
+      "abs_gap_mean_bp": 174.60865777511577,
+      "abs_gap_p95_bp": 446.172924394317,
+      "abs_gap_max_bp": 1066.7483262037051
+    },
+    {
+      "T_yr": 10.0,
+      "mean_gap_bp": 0.3585510402646624,
+      "abs_gap_mean_bp": 178.37366362912343,
+      "abs_gap_p95_bp": 450.26284899947996,
+      "abs_gap_max_bp": 1085.3489702771192
+    }
+  ],
+  "truncation": {
+    "total_steps": 120,
+    "total_truncations": 0,
+    "step_indices_with_truncation": 0,
+    "fraction_of_steps_with_any_trunc": 0.0,
+    "mean_paths_truncated_per_step": 0.0,
+    "max_paths_truncated_in_any_step": 0
+  },
+  "em_global_min": 0.001389144639125393,
+  "em_global_max": 0.17267452017805265,
+  "exact_global_min": 0.0019190421748364788,
+  "exact_global_max": 0.16328502363558683,
+  "stress_config": {
+    "a": 0.3,
+    "b": 0.04,
+    "sigma": 0.2,
+    "r0": 0.0372
+  },
+  "stress_feller": {
+    "feller_lhs_2ab": 0.024,
+    "feller_rhs_sigma2": 0.04000000000000001,
+    "feller_ratio": 0.5999999999999999,
+    "feller_holds": false,
+    "boundary_attainable": true
+  },
+  "stress_truncation": {
+    "total_steps": 120,
+    "total_truncations": 59458,
+    "step_indices_with_truncation": 119,
+    "fraction_of_steps_with_any_trunc": 0.9916666666666667,
+    "mean_paths_truncated_per_step": 495.48333333333335,
+    "max_paths_truncated_in_any_step": 606
+  },
+  "stress_moments": [
+    {
+      "T": 1.0,
+      "E_sim": 0.03732146815222384,
+      "E_ana": 0.03792570898209119,
+      "Var_sim": 0.0011447362954907533,
+      "Var_ana": 0.0011314865121698585,
+      "min_sim": -0.007966510085748425,
+      "max_sim": 0.22914529315911963,
+      "neg_sim": 0.0344
+    },
+    {
+      "T": 2.0,
+      "E_sim": 0.038225973003825534,
+      "E_ana": 0.038463327418936724,
+      "Var_sim": 0.00181077154940754,
+      "Var_ana": 0.0017710382632062471,
+      "min_sim": -0.011613341885696585,
+      "max_sim": 0.3705468206334966,
+      "neg_sim": 0.0468
+    },
+    {
+      "T": 5.0,
+      "E_sim": 0.03915867023019744,
+      "E_ana": 0.0393752355515844,
+      "Var_sim": 0.0025720545210593166,
+      "Var_ana": 0.0024691863967542856,
+      "min_sim": -0.012481209559528323,
+      "max_sim": 0.5585278853041462,
+      "neg_sim": 0.0522
+    },
+    {
+      "T": 10.0,
+      "E_sim": 0.040508852328800284,
+      "E_ana": 0.03986059620856998,
+      "Var_sim": 0.0026876769776899953,
+      "Var_ana": 0.0026423948894841766,
+      "min_sim": -0.009428874345005027,
+      "max_sim": 0.507874823556863,
+      "neg_sim": 0.0544
+    }
+  ],
+  "stress_em_global_min": -0.01711412360521978,
+  "sanity_checks": {
+    "feller_condition_holds_baseline": {
+      "ratio_2ab_over_sigma2": 6.25,
+      "pass": true
+    },
+    "positivity_under_feller": {
+      "max_neg_fraction_at_horizons": 0.0,
+      "global_min_baseline": 0.001389144639125393,
+      "baseline_truncations": 0,
+      "pass": true
+    },
+    "mean_band_5bp": {
+      "max_abs_mean_gap_bp": 2.1811113048696846,
+      "tolerance_bp": 5.0,
+      "pass": true
+    },
+    "variance_band_5pct": {
+      "max_abs_var_rel": 0.029620641283094606,
+      "tolerance_pct": 0.05,
+      "pass": true
+    },
+    "stress_activation": {
+      "stress_truncations": 59458,
+      "stress_steps_with_truncation": 119,
+      "stress_global_min": -0.01711412360521978,
+      "pass": true
+    }
+  }
+}
