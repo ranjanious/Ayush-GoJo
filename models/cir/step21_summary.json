@@ -1,0 +1,357 @@
+{
+  "config": {
+    "a": 0.5,
+    "b": 0.04,
+    "sigma": 0.08,
+    "r0": 0.0372,
+    "dt": 0.08333333333333333,
+    "n_paths": 10000,
+    "horizon_years": 10.0,
+    "seed": 42
+  },
+  "baseline_feller": {
+    "feller_lhs_2ab": 0.04,
+    "feller_rhs_sigma2": 0.0064,
+    "feller_ratio": 6.25,
+    "feller_holds": true,
+    "boundary_attainable": false
+  },
+  "scenarios": [
+    {
+      "name": "above",
+      "ratio": 1.5,
+      "a": 0.5,
+      "b": 0.04,
+      "sigma": 0.16329931618554522,
+      "r0": 0.0372,
+      "feller": {
+        "feller_lhs_2ab": 0.04,
+        "feller_rhs_sigma2": 0.026666666666666672,
+        "feller_ratio": 1.4999999999999998,
+        "feller_holds": true,
+        "boundary_attainable": false
+      },
+      "EM": {
+        "touch_freq": 0.2991,
+        "terminal_freq": 0.0053,
+        "pathwise_min_mean": 0.003587975761234847,
+        "pathwise_min_p05": -0.0026228851855608737,
+        "pathwise_min_min": -0.01039973486160033
+      },
+      "Exact": {
+        "touch_freq": 0.0,
+        "terminal_freq": 0.0,
+        "pathwise_min_mean": 0.004924920293833287,
+        "pathwise_min_p05": 0.0002162142454674629,
+        "pathwise_min_min": 2.3335270182111375e-06
+      },
+      "EM_total_truncations": 5719,
+      "EM_steps_with_any_trunc": 119
+    },
+    {
+      "name": "boundary",
+      "ratio": 1.0,
+      "a": 0.5,
+      "b": 0.04,
+      "sigma": 0.2,
+      "r0": 0.0372,
+      "feller": {
+        "feller_lhs_2ab": 0.04,
+        "feller_rhs_sigma2": 0.04000000000000001,
+        "feller_ratio": 0.9999999999999998,
+        "feller_holds": false,
+        "boundary_attainable": true
+      },
+      "EM": {
+        "touch_freq": 0.6497,
+        "terminal_freq": 0.0191,
+        "pathwise_min_mean": 0.00014858030057123873,
+        "pathwise_min_p05": -0.0058183771203305125,
+        "pathwise_min_min": -0.01714044695778983
+      },
+      "Exact": {
+        "touch_freq": 0.0,
+        "terminal_freq": 0.0,
+        "pathwise_min_mean": 0.0024477375547030653,
+        "pathwise_min_p05": 1.840363221974062e-05,
+        "pathwise_min_min": 1.0065447147092565e-08
+      },
+      "EM_total_truncations": 23816,
+      "EM_steps_with_any_trunc": 119
+    },
+    {
+      "name": "below",
+      "ratio": 0.7,
+      "a": 0.5,
+      "b": 0.04,
+      "sigma": 0.23904572186687875,
+      "r0": 0.0372,
+      "feller": {
+        "feller_lhs_2ab": 0.04,
+        "feller_rhs_sigma2": 0.057142857142857155,
+        "feller_ratio": 0.6999999999999998,
+        "feller_holds": false,
+        "boundary_attainable": true
+      },
+      "EM": {
+        "touch_freq": 0.8559,
+        "terminal_freq": 0.0521,
+        "pathwise_min_mean": -0.0028511932528012167,
+        "pathwise_min_p05": -0.009458104868653604,
+        "pathwise_min_min": -0.028245319478267673
+      },
+      "Exact": {
+        "touch_freq": 0.0,
+        "terminal_freq": 0.0,
+        "pathwise_min_mean": 0.0011221083306351574,
+        "pathwise_min_p05": 8.919883901143974e-07,
+        "pathwise_min_min": 9.244438003701847e-11
+      },
+      "EM_total_truncations": 59898,
+      "EM_steps_with_any_trunc": 119
+    }
+  ],
+  "horizon_table": [
+    {
+      "scenario": "above/EM",
+      "T_yr": 1.0,
+      "touch_freq": 0.0144,
+      "terminal_freq": 0.0025,
+      "pathwise_min_mean": 0.020769359889698545,
+      "pathwise_min_p05": 0.0025989133441578047,
+      "pathwise_min_min": -0.006778216169563169
+    },
+    {
+      "scenario": "above/EM",
+      "T_yr": 2.0,
+      "touch_freq": 0.0499,
+      "terminal_freq": 0.0046,
+      "pathwise_min_mean": 0.015372018987528435,
+      "pathwise_min_p05": 3.0024480204526734e-07,
+      "pathwise_min_min": -0.006778216169563169
+    },
+    {
+      "scenario": "above/EM",
+      "T_yr": 5.0,
+      "touch_freq": 0.1568,
+      "terminal_freq": 0.0067,
+      "pathwise_min_mean": 0.008238405260105715,
+      "pathwise_min_p05": -0.001791452015898386,
+      "pathwise_min_min": -0.008024137986087261
+    },
+    {
+      "scenario": "above/EM",
+      "T_yr": 10.0,
+      "touch_freq": 0.2991,
+      "terminal_freq": 0.0053,
+      "pathwise_min_mean": 0.003587975761234847,
+      "pathwise_min_p05": -0.0026228851855608737,
+      "pathwise_min_min": -0.01039973486160033
+    },
+    {
+      "scenario": "above/Exact",
+      "T_yr": 1.0,
+      "touch_freq": 0.0,
+      "terminal_freq": 0.0,
+      "pathwise_min_mean": 0.02130512963279516,
+      "pathwise_min_p05": 0.004069966174743644,
+      "pathwise_min_min": 4.625860676838547e-05
+    },
+    {
+      "scenario": "above/Exact",
+      "T_yr": 2.0,
+      "touch_freq": 0.0,
+      "terminal_freq": 0.0,
+      "pathwise_min_mean": 0.01622076384051936,
+      "pathwise_min_p05": 0.001384073531061247,
+      "pathwise_min_min": 2.3335270182111375e-06
+    },
+    {
+      "scenario": "above/Exact",
+      "T_yr": 5.0,
+      "touch_freq": 0.0,
+      "terminal_freq": 0.0,
+      "pathwise_min_mean": 0.009405120103046552,
+      "pathwise_min_p05": 0.000420525951130616,
+      "pathwise_min_min": 2.3335270182111375e-06
+    },
+    {
+      "scenario": "above/Exact",
+      "T_yr": 10.0,
+      "touch_freq": 0.0,
+      "terminal_freq": 0.0,
+      "pathwise_min_mean": 0.004924920293833287,
+      "pathwise_min_p05": 0.0002162142454674629,
+      "pathwise_min_min": 2.3335270182111375e-06
+    },
+    {
+      "scenario": "boundary/EM",
+      "T_yr": 1.0,
+      "touch_freq": 0.0693,
+      "terminal_freq": 0.0164,
+      "pathwise_min_mean": 0.01766873585196217,
+      "pathwise_min_p05": -0.000665784912831264,
+      "pathwise_min_min": -0.013952982475943263
+    },
+    {
+      "scenario": "boundary/EM",
+      "T_yr": 2.0,
+      "touch_freq": 0.17,
+      "terminal_freq": 0.0181,
+      "pathwise_min_mean": 0.011762181410599098,
+      "pathwise_min_p05": -0.0025725807439179247,
+      "pathwise_min_min": -0.016847207497474738
+    },
+    {
+      "scenario": "boundary/EM",
+      "T_yr": 5.0,
+      "touch_freq": 0.4055,
+      "terminal_freq": 0.021,
+      "pathwise_min_mean": 0.004460740485583232,
+      "pathwise_min_p05": -0.0045247668901837795,
+      "pathwise_min_min": -0.016847207497474738
+    },
+    {
+      "scenario": "boundary/EM",
+      "T_yr": 10.0,
+      "touch_freq": 0.6497,
+      "terminal_freq": 0.0191,
+      "pathwise_min_mean": 0.00014858030057123873,
+      "pathwise_min_p05": -0.0058183771203305125,
+      "pathwise_min_min": -0.01714044695778983
+    },
+    {
+      "scenario": "boundary/Exact",
+      "T_yr": 1.0,
+      "touch_freq": 0.0,
+      "terminal_freq": 0.0,
+      "pathwise_min_mean": 0.018152128624900912,
+      "pathwise_min_p05": 0.0010334397605734297,
+      "pathwise_min_min": 5.92947122207204e-07
+    },
+    {
+      "scenario": "boundary/Exact",
+      "T_yr": 2.0,
+      "touch_freq": 0.0,
+      "terminal_freq": 0.0,
+      "pathwise_min_mean": 0.012609267547512962,
+      "pathwise_min_p05": 0.00020295473993755058,
+      "pathwise_min_min": 1.0065447147092565e-08
+    },
+    {
+      "scenario": "boundary/Exact",
+      "T_yr": 5.0,
+      "touch_freq": 0.0,
+      "terminal_freq": 0.0,
+      "pathwise_min_mean": 0.00611155591726453,
+      "pathwise_min_p05": 4.8236700759883915e-05,
+      "pathwise_min_min": 1.0065447147092565e-08
+    },
+    {
+      "scenario": "boundary/Exact",
+      "T_yr": 10.0,
+      "touch_freq": 0.0,
+      "terminal_freq": 0.0,
+      "pathwise_min_mean": 0.0024477375547030653,
+      "pathwise_min_p05": 1.840363221974062e-05,
+      "pathwise_min_min": 1.0065447147092565e-08
+    },
+    {
+      "scenario": "below/EM",
+      "T_yr": 1.0,
+      "touch_freq": 0.1589,
+      "terminal_freq": 0.0444,
+      "pathwise_min_mean": 0.014693555277926418,
+      "pathwise_min_p05": -0.003386844504024875,
+      "pathwise_min_min": -0.021100264930322042
+    },
+    {
+      "scenario": "below/EM",
+      "T_yr": 2.0,
+      "touch_freq": 0.3325,
+      "terminal_freq": 0.0506,
+      "pathwise_min_mean": 0.008455910514951977,
+      "pathwise_min_p05": -0.005369787575216624,
+      "pathwise_min_min": -0.028245319478267673
+    },
+    {
+      "scenario": "below/EM",
+      "T_yr": 5.0,
+      "touch_freq": 0.6366,
+      "terminal_freq": 0.0517,
+      "pathwise_min_mean": 0.001178073994601414,
+      "pathwise_min_p05": -0.007745737899501204,
+      "pathwise_min_min": -0.028245319478267673
+    },
+    {
+      "scenario": "below/EM",
+      "T_yr": 10.0,
+      "touch_freq": 0.8559,
+      "terminal_freq": 0.0521,
+      "pathwise_min_mean": -0.0028511932528012167,
+      "pathwise_min_p05": -0.009458104868653604,
+      "pathwise_min_min": -0.028245319478267673
+    },
+    {
+      "scenario": "below/Exact",
+      "T_yr": 1.0,
+      "touch_freq": 0.0,
+      "terminal_freq": 0.0,
+      "pathwise_min_mean": 0.01572431675358492,
+      "pathwise_min_p05": 0.00013843677318102626,
+      "pathwise_min_min": 3.093200468651745e-09
+    },
+    {
+      "scenario": "below/Exact",
+      "T_yr": 2.0,
+      "touch_freq": 0.0,
+      "terminal_freq": 0.0,
+      "pathwise_min_mean": 0.010107896393318784,
+      "pathwise_min_p05": 1.8006085709403e-05,
+      "pathwise_min_min": 7.32731552631664e-10
+    },
+    {
+      "scenario": "below/Exact",
+      "T_yr": 5.0,
+      "touch_freq": 0.0,
+      "terminal_freq": 0.0,
+      "pathwise_min_mean": 0.00397651606631936,
+      "pathwise_min_p05": 2.5496128265648696e-06,
+      "pathwise_min_min": 7.32731552631664e-10
+    },
+    {
+      "scenario": "below/Exact",
+      "T_yr": 10.0,
+      "touch_freq": 0.0,
+      "terminal_freq": 0.0,
+      "pathwise_min_mean": 0.0011221083306351574,
+      "pathwise_min_p05": 8.919883901143974e-07,
+      "pathwise_min_min": 9.244438003701847e-11
+    }
+  ],
+  "sanity_checks": {
+    "baseline_feller_margin": {
+      "ratio": 6.25,
+      "holds": true,
+      "pass": true
+    },
+    "one_knob_arithmetic": {
+      "max_ratio_deviation": 2.220446049250313e-16,
+      "pass": true
+    },
+    "monotonicity": {
+      "em_touch_increasing": true,
+      "exact_p05_decreasing": true,
+      "pass": true
+    },
+    "exact_driver_nonnegative": {
+      "min_exact_pathwise_min": 9.244438003701847e-11,
+      "pass": true
+    },
+    "boundary_attainment_signature": {
+      "below_exact_p05_T10": 8.919883901143974e-07,
+      "tolerance": 0.001,
+      "pass": true
+    }
+  }
+}
