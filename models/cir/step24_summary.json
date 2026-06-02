@@ -1,0 +1,117 @@
+{
+  "config": {
+    "a": 0.5,
+    "b": 0.04,
+    "sigma": 0.08,
+    "r0": 0.0372,
+    "dt": 0.08333333333333333,
+    "n_paths": 10000,
+    "horizon_years": 10.0,
+    "seed": 42
+  },
+  "feller_ratio": 6.25,
+  "max_abs_mean_err_em_bp": 3.1061546566284184,
+  "max_abs_mean_err_exact_bp": 4.081834955122418,
+  "max_zcb_em_vs_ana_bp": 1.1374897955873653,
+  "max_zcb_exact_vs_ana_bp": 4.171866725138917,
+  "max_zcb_em_vs_exact_bp": 5.301923793312735,
+  "max_coupon_ann_return_diff_bp": 3.846944805814059,
+  "max_pathwise_mean_gap_bp": 4.790385928349582,
+  "var_table": [
+    {
+      "target": "1m rate level loss (-Delta r)",
+      "level": 0.95,
+      "VaR_em": 0.007340099780391284,
+      "VaR_exact": 0.0067912638280478955,
+      "abs_diff_bp": 5.488359523433883,
+      "rel_diff_pct": 8.08149950053034
+    },
+    {
+      "target": "1m rate level loss (-Delta r)",
+      "level": 0.99,
+      "VaR_em": 0.010456790446814279,
+      "VaR_exact": 0.009415924493282156,
+      "abs_diff_bp": 10.408659535321233,
+      "rel_diff_pct": 11.054314998752751
+    },
+    {
+      "target": "1yr Bond B MtM loss",
+      "level": 0.95,
+      "VaR_em": 0.20525610369868919,
+      "VaR_exact": 0.21090521202170642,
+      "abs_diff_bp": -0.5650431326691119,
+      "rel_diff_pct": -0.005650431326691119
+    },
+    {
+      "target": "1yr Bond B MtM loss",
+      "level": 0.99,
+      "VaR_em": 2.2505127833042677,
+      "VaR_exact": 2.214208136812891,
+      "abs_diff_bp": 3.6313148927149035,
+      "rel_diff_pct": 0.036313148927149035
+    }
+  ],
+  "conditional_error": [
+    {
+      "r_k": 0.0372,
+      "mu_exact": 0.03731426952009441,
+      "mu_em": 0.037316666666666665,
+      "mu_err_bp": -0.023971465722555374,
+      "leading_mu_term_bp": -0.024305555555555587,
+      "var_exact": 1.906567153241665e-05,
+      "var_em": 1.984e-05,
+      "var_err_rel": -0.03902865259996721,
+      "leading_var_term_abs": -8.266666666666667e-07
+    },
+    {
+      "r_k": 0.04,
+      "mu_exact": 0.04,
+      "mu_em": 0.04,
+      "mu_err_bp": 0.0,
+      "leading_mu_term_bp": 0.0,
+      "var_exact": 2.046862985489322e-05,
+      "var_em": 2.1333333333333335e-05,
+      "var_err_rel": -0.04053297555188045,
+      "leading_var_term_abs": -8.88888888888889e-07
+    },
+    {
+      "r_k": 0.06,
+      "mu_exact": 0.059183789142182766,
+      "mu_em": 0.059166666666666666,
+      "mu_err_bp": 0.17122475516100077,
+      "leading_mu_term_bp": 0.17361111111111108,
+      "var_exact": 3.0489760729725824e-05,
+      "var_em": 3.2e-05,
+      "var_err_rel": -0.047194977196067946,
+      "leading_var_term_abs": -1.3333333333333334e-06
+    }
+  ],
+  "sanity_checks": {
+    "zcb_within_5bp_of_price": {
+      "max_em_bp": 1.1374897955873653,
+      "max_exact_bp": 4.171866725138917,
+      "tolerance_bp": 5.0,
+      "pass": true
+    },
+    "marginal_mean_within_5bp": {
+      "max_em_bp": 3.1061546566284184,
+      "max_exact_bp": 4.081834955122418,
+      "tolerance_bp": 5.0,
+      "pass": true
+    },
+    "taylor_leading_term_match": {
+      "mu_err_bp": -0.023971465722555374,
+      "leading_term_bp": -0.024305555555555587,
+      "rel_dev": 0.013745410272008752,
+      "tolerance": 0.05,
+      "pass": true
+    },
+    "variance_leading_term": {
+      "pass": true
+    },
+    "feller_baseline": {
+      "ratio": 6.25,
+      "pass": true
+    }
+  }
+}
