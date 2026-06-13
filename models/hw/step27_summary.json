@@ -1,0 +1,192 @@
+{
+  "config": {
+    "a": 0.5,
+    "sigma": 0.01,
+    "dt": 0.08333333333333333,
+    "horizon_years": 10.0,
+    "coupon_freq": 2
+  },
+  "cmt_input": [
+    {
+      "label": "1M",
+      "T_yr": 0.08333333333333333,
+      "par_yield": 0.0374,
+      "par_yield_pct": 3.74
+    },
+    {
+      "label": "3M",
+      "T_yr": 0.25,
+      "par_yield": 0.0372,
+      "par_yield_pct": 3.7199999999999998
+    },
+    {
+      "label": "6M",
+      "T_yr": 0.5,
+      "par_yield": 0.0371,
+      "par_yield_pct": 3.71
+    },
+    {
+      "label": "1Y",
+      "T_yr": 1.0,
+      "par_yield": 0.0363,
+      "par_yield_pct": 3.63
+    },
+    {
+      "label": "2Y",
+      "T_yr": 2.0,
+      "par_yield": 0.0368,
+      "par_yield_pct": 3.6799999999999997
+    },
+    {
+      "label": "3Y",
+      "T_yr": 3.0,
+      "par_yield": 0.0368,
+      "par_yield_pct": 3.6799999999999997
+    },
+    {
+      "label": "5Y",
+      "T_yr": 5.0,
+      "par_yield": 0.0379,
+      "par_yield_pct": 3.7900000000000005
+    },
+    {
+      "label": "7Y",
+      "T_yr": 7.0,
+      "par_yield": 0.0398,
+      "par_yield_pct": 3.9800000000000004
+    },
+    {
+      "label": "10Y",
+      "T_yr": 10.0,
+      "par_yield": 0.042,
+      "par_yield_pct": 4.2
+    },
+    {
+      "label": "20Y",
+      "T_yr": 20.0,
+      "par_yield": 0.0481,
+      "par_yield_pct": 4.81
+    },
+    {
+      "label": "30Y",
+      "T_yr": 30.0,
+      "par_yield": 0.0485,
+      "par_yield_pct": 4.8500000000000005
+    }
+  ],
+  "knots": [
+    {
+      "T_yr": 0.08333333333333333,
+      "label": "1M",
+      "P": 0.9968930167644175,
+      "z_pct": 3.734183914732659,
+      "f_at_knot_pct": 3.734183914732659
+    },
+    {
+      "T_yr": 0.25,
+      "label": "3M",
+      "P": 0.9907856930545922,
+      "z_pct": 3.7028085050707475,
+      "f_at_knot_pct": 3.6400576857469247
+    },
+    {
+      "T_yr": 0.5,
+      "label": "6M",
+      "P": 0.9817878356487163,
+      "z_pct": 3.6760094562859056,
+      "f_at_knot_pct": 3.6583631292552035
+    },
+    {
+      "T_yr": 1.0,
+      "label": "1Y",
+      "P": 0.9649715333397665,
+      "z_pct": 3.565667720803468,
+      "f_at_knot_pct": 3.252288841386856
+    },
+    {
+      "T_yr": 2.0,
+      "label": "2Y",
+      "P": 0.9296466713209661,
+      "z_pct": 3.6475344167385195,
+      "f_at_knot_pct": 4.206513383960287
+    },
+    {
+      "T_yr": 3.0,
+      "label": "3Y",
+      "P": 0.8963572536739604,
+      "z_pct": 3.6472074952296665,
+      "f_at_knot_pct": 3.086593920463634
+    },
+    {
+      "T_yr": 5.0,
+      "label": "5Y",
+      "P": 0.8285588794194672,
+      "z_pct": 3.7613475429172727,
+      "f_at_knot_pct": 4.77852130843373
+    },
+    {
+      "T_yr": 7.0,
+      "label": "7Y",
+      "P": 0.7575815642866413,
+      "z_pct": 3.966058168132684,
+      "f_at_knot_pct": 4.1771481539086945
+    },
+    {
+      "T_yr": 10.0,
+      "label": "10Y",
+      "P": 0.6563174600434178,
+      "z_pct": 4.2111067410283995,
+      "f_at_knot_pct": 5.388625334994778
+    },
+    {
+      "T_yr": 20.0,
+      "label": "20Y",
+      "P": 0.3696483372973285,
+      "z_pct": 4.976015825175282,
+      "f_at_knot_pct": 6.093224483649554
+    },
+    {
+      "T_yr": 30.0,
+      "label": "30Y",
+      "P": 0.22487787627939615,
+      "z_pct": 4.973992654077945,
+      "f_at_knot_pct": 3.846668140116983
+    }
+  ],
+  "headline": {
+    "f_0_pct": 3.734183914732659,
+    "f_10y_pct": 5.388625334994778,
+    "theta_1m_pct": 1.3031341393056295,
+    "theta_12m_pct": 2.586690168855145,
+    "theta_120m_pct": 2.774772128363569,
+    "theta_min_pct": 0.47949967005196253,
+    "theta_max_pct": 3.2099026259337484,
+    "convexity_10y_bp": 0.9999546000702376,
+    "n_grid_points": 120
+  },
+  "checks": {
+    "par_bonds_reprice_to_par": {
+      "max_abs_residual_bp": 2.220446049250313e-12,
+      "tolerance_bp": 1e-06,
+      "pass": true
+    },
+    "forward_integral_reproduces_P": {
+      "max_abs_residual_bp": 0.0,
+      "tolerance_bp": 1e-10,
+      "pass": true
+    },
+    "analytical_theta_vs_finite_diff": {
+      "max_abs_diff": 6.245698402906896e-13,
+      "tolerance": 1e-06,
+      "pass": true
+    },
+    "exact_fit_initial_curve": {
+      "by_construction": true,
+      "pass": true
+    },
+    "theta_evaluated_on_monthly_grid": {
+      "n_grid": 120,
+      "pass": true
+    }
+  }
+}
